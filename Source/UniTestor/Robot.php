@@ -17,8 +17,8 @@ class Robot {
 
         $this->_clock       = new Clock();
         $this->_clock->reset();
-        $this->_landSensor  = new LandSensor();
         $this->_coordinates = new Coordinates(0, 0);
+        $this->_landSensor  = new LandSensor();
 
         return;
     }
