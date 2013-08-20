@@ -20,19 +20,24 @@ class Clock {
         if(null === $this->_date)
             $this->_date = new \DateTime();
         else
-            $this->_date->setTimestamp(time());
+            $this->_date->setTimestamp($this->getCurrentTime());
 
         return $this;
     }
 
     public function getDifference ( ) {
 
-        return time() - $this->getTimestamp();
+        return $this->getCurrentTime() - $this->getTimestamp();
     }
 
     public function getTimestamp ( ) {
 
         return $this->_date->getTimestamp();
+    }
+
+    public function getCurrentTime ( ) {
+
+        return time();
     }
 }
 
