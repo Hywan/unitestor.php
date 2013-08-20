@@ -97,6 +97,44 @@ class Robot extends \Test {
 
         $this->genericMove('up right down left', 0.0, 0.0);
     }
+
+    public function testMoveEnergy ( ) {
+
+        $this
+            ->given($clock = new \Mock\UniTestor\Clock())
+
+            ->given($landSensor = new \Mock\UniTestor\LandSensor())
+            ->and($this->calling($landSensor)->getNeededEnergy = function ( $vector ) {
+
+                return $vector->getLength() * .2;
+            })
+
+            ->given($robot = new \UniTestor\Robot($clock, $landSensor))
+            ->given($previousCoordinates = $robot->getCoordinates())
+            ->and($this->function->sleep = null)
+
+            // Before moving.
+            ->then
+                ->float($robot->getEnergy())
+                    ->isEqualTo(1.0)
+
+            ->and($robot->moveTo(new \UniTestor\Coordinates(3, 2)))
+            // After moving.
+            ->then
+                ->float($robot->getEnergy())
+                    ->isNearlyEqualTo(0.2788897449072)
+
+            // Add time.
+            ->given($reachTime = floor($robot->getTimeToReach(new \UniTestor\Vector(
+                $previousCoordinates,
+                $robot->getCoordinates()
+            ))))
+            ->and($this->calling($clock)->getDifference = $reachTime)
+            ->then
+                ->float($robot->getEnergy())
+                    ->isNearlyEqualTo(0.5788897449072)
+            ;
+    }
 }
 
 }

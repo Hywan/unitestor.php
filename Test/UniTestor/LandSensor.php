@@ -4,7 +4,7 @@ namespace Test\UniTestor {
 
 class LandSensor extends \Test {
 
-    public function testNeedEnergy ( ) {
+    public function testNeededEnergy ( ) {
 
         $this
             ->if($landSensor = new \UniTestor\LandSensor())
