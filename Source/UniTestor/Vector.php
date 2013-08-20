@@ -17,6 +17,16 @@ class Vector {
         return;
     }
 
+    public function getFirstCoordinates ( ) {
+
+        return $this->_c1;
+    }
+
+    public function getSecondCoordinates ( ) {
+
+        return $this->_c2;
+    }
+
     public function getLength ( ) {
 
         return sqrt(
