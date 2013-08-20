@@ -65,16 +65,14 @@ class Robot {
         $this->_energy      = $nextEnergy;
         $this->_coordinates = $coordinates;
 
-        sleep($vector->getLength());
+        sleep($this->getTimeToReach($vector));
 
         return true;
     }
 
-    public function wait ( $seconds ) {
+    public function getTimeToReach ( Vector $vector ) {
 
-        sleep($seconds);
-
-        return;
+        return $vector->getLength();
     }
 
     public function getClock ( ) {
