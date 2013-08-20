@@ -13,12 +13,13 @@ class Robot {
 
 
 
-    public function __construct ( ) {
+    public function __construct ( Clock      $clock      = null,
+                                  LandSensor $landSensor = null ) {
 
-        $this->_clock       = new Clock();
+        $this->_clock       = $clock ?: new Clock();
         $this->_clock->reset();
         $this->_coordinates = new Coordinates(0, 0);
-        $this->_landSensor  = new LandSensor();
+        $this->_landSensor  = $landSensor ?: new LandSensor();
 
         return;
     }
@@ -74,6 +75,11 @@ class Robot {
         sleep($seconds);
 
         return;
+    }
+
+    public function getClock ( ) {
+
+        return $this->_clock;
     }
 
     public function getCoordinates ( ) {
