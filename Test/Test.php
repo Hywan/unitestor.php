@@ -1,7 +1,5 @@
 <?php
 
-namespace Test {
-
 abstract class Test extends \atoum\test {
 
     public function __construct ( \atoum\score   $score = null,
@@ -12,8 +10,4 @@ abstract class Test extends \atoum\test {
 
         return parent::__construct($score, $locale, $adapter);
     }
-}
-
-class_alias('Test\Test', 'Test');
-
 }
