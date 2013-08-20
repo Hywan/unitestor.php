@@ -15,24 +15,12 @@ class Robot {
 
     public function __construct ( ) {
 
-        $this->_clock      = new Clock();
-        $this->_landSensor = new LandSensor();
-        $this->start();
-
-        return;
-    }
-
-    public function start ( ) {
-
+        $this->_clock       = new Clock();
         $this->_clock->reset();
+        $this->_landSensor  = new LandSensor();
         $this->_coordinates = new Coordinates(0, 0);
 
-        return true;
-    }
-
-    public function stop ( ) {
-
-        return true;
+        return;
     }
 
     public function move ( $direction ) {
