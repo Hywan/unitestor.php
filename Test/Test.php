@@ -16,8 +16,6 @@ abstract class Test extends \Hoathis\Atoum\Test {
 
     protected function beforeTestMethodPraspel ( $testMethod ) {
 
-        $this->getPraspelAsserter()->setWith('undefined method');
-
         return;
     }
 }
