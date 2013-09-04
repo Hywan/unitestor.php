@@ -19,6 +19,19 @@ class Vector extends \Test {
             ;
     }
 
+    public function testLengthSimple ( ) {
+
+        $this
+            ->if($vector = new \UniTestor\Vector(
+                new \UniTestor\Coordinates(0, 0),
+                new \UniTestor\Coordinates(3, 4)
+            ))
+            ->then
+                ->float($vector->getLength())
+                    ->isEqualTo(5.0);
+            ;
+    }
+
     public function testLength ( ) {
 
         $this
