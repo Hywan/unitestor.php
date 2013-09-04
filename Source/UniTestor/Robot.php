@@ -7,11 +7,8 @@ class Robot {
     const ENERGY_RECHARGING = .1;
 
     protected $_clock       = null;
-
     protected $_energy      = 1.0;
-
     protected $_coordinates = null;
-
     protected $_landSensor  = null;
 
 
