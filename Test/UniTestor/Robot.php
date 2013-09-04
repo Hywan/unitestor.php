@@ -23,7 +23,7 @@ class Robot extends \Test {
                     ->isEqualTo(1.0)
 
                 ->object($robot->getLandSensor())
-                    ->isInstanceOf('\UniTestor\LandSensor');
+                    ->isInstanceOf('\UniTestor\LandSensor')
             ;
     }
 
