@@ -31,6 +31,17 @@ class Vector extends \Test {
                     ->isNearlyEqualTo(3.605551275464)
             ;
     }
+
+    /*
+    public function testFoo ( ) {
+
+        $this
+            ->if($this->sampler['x']->in = realdom()->boundinteger(3, 92))
+            ->then
+                ->boolean($this->sampler['x']->predicate(5))
+                    ->isTrue();
+    }
+    */
 }
 
 }
