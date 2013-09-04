@@ -5,7 +5,6 @@ namespace UniTestor {
 class Vector {
 
     protected $_c1 = null;
-
     protected $_c2 = null;
 
 

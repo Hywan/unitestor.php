@@ -87,9 +87,10 @@ class Robot {
 
     public function getEnergy ( ) {
 
-        $diff          = $this->_clock->getDifference();
+        $clock         = $this->getClock();
+        $diff          = $clock->getDifference();
         $this->_energy = min(1.0, $this->_energy + $diff * static::ENERGY_RECHARGING);
-        $this->_clock->reset();
+        $clock->reset();
 
         return $this->_energy;
     }

@@ -5,7 +5,6 @@ namespace UniTestor {
 class Coordinates {
 
     protected $_x = 0.0;
-
     protected $_y = 0.0;
 
 
