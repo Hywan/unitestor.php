@@ -1,5 +1,7 @@
 <?php
 
+require_once '/usr/local/lib/Hoa/Core/Core.php';
+
 // Autoloader.
 require __DIR__ .
         DIRECTORY_SEPARATOR .
