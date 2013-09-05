@@ -34,11 +34,7 @@ class Robot extends \Test {
             ->given($landSensor = new \UniTestor\LandSensor())
             ->if($robot = new \UniTestor\Robot($clock, $landSensor))
             ->then
-                ->object($robot->getClock())
-                    ->isIdenticalTo($clock)
-
-                ->object($robot->getLandSensor())
-                    ->isIdenticalTo($landSensor)
+                // À vous de jouer !
             ;
     }
 
@@ -78,62 +74,11 @@ class Robot extends \Test {
         $this->genericMove('up', 0.0, 1.0);
     }
 
-    public function testMoveDown ( ) {
-
-        $this->genericMove('down', 0.0, -1.0);
-    }
-
-    public function testMoveRight ( ) {
-
-        $this->genericMove('right', 1.0, 0.0);
-    }
-
-    public function testMoveLeft ( ) {
-
-        $this->genericMove('left', -1.0, 0.0);
-    }
-
-    public function testMoveUpRightDownLeft ( ) {
-
-        $this->genericMove('up right down left', 0.0, 0.0);
-    }
+    // À vous de jouer !
 
     public function testMoveEnergy ( ) {
 
-        $this
-            ->given($clock = new \Mock\UniTestor\Clock())
-
-            ->given($landSensor = new \Mock\UniTestor\LandSensor())
-            ->and($this->calling($landSensor)->getNeededEnergy = function ( $vector ) {
-
-                return $vector->getLength() * .2;
-            })
-
-            ->given($robot = new \UniTestor\Robot($clock, $landSensor))
-            ->given($previousCoordinates = $robot->getCoordinates())
-            ->and($this->function->sleep = null)
-
-            // Before moving.
-            ->then
-                ->float($robot->getEnergy())
-                    ->isEqualTo(1.0)
-
-            ->and($robot->moveTo(new \UniTestor\Coordinates(3, 2)))
-            // After moving.
-            ->then
-                ->float($robot->getEnergy())
-                    ->isNearlyEqualTo(0.2788897449072)
-
-            // Add time.
-            ->given($reachTime = floor($robot->getTimeToReach(new \UniTestor\Vector(
-                $previousCoordinates,
-                $robot->getCoordinates()
-            ))))
-            ->and($this->calling($clock)->getDifference = $reachTime)
-            ->then
-                ->float($robot->getEnergy())
-                    ->isNearlyEqualTo(0.5788897449072)
-            ;
+        // À vous de jouer !
     }
 }
 
