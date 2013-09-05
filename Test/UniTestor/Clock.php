@@ -44,18 +44,7 @@ class Clock extends \Test {
 
     public function testDifference ( ) {
 
-        $this
-            ->given($clock = new \Mock\UniTestor\Clock())
-            ->and($previousTime = $clock->getTimestamp())
-
-            ->if($delay = 10)
-            ->and($nextTime = $previousTime + $delay)
-            ->and($this->calling($clock)->getCurrentTime = $nextTime)
-
-            ->then
-                ->integer($clock->getDifference())
-                    ->isEqualTo($nextTime - $previousTime)
-            ;
+        // À vous de jouer !
     }
 }
 
