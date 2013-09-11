@@ -25,6 +25,22 @@ tout est pré-installé. Quelques commandes à connaître (dans un terminal) :
   * `gosource` pour aller dans le dossier `Source/Unitestor/` du projet ;
   * `gotest` pour aller dans le dossier `Test/Unitestor/` du projet.
 
+Sinon, pour installation manuelle :
+
+    $ apt-get install php5
+    $ apt-get install php5-xdebug
+    $ git clone https://github.com/atoum/atoum \
+                /usr/local/lib/atoum
+    $ git clone http://git.hoa-project.net/Central.git \
+                /usr/local/lib/Hoa.central
+    $ ln -s /usr/local/lib/Hoa.central/Hoa \
+            /usr/local/lib/Hoa
+    $ ln -s /usr/local/lib/Hoa.central/Hoathis \
+            /usr/local/lib/Hoathis
+    $ git clone http://git.hoa-project.net/Hoathis/Atoum.git \
+                /usr/local/lib/Hoathis/Atoum
+    $ export PATH="/usr/local/lib/Hoa/Core/Bin:/usr/local/lib/atoum/bin:$PATH"
+
 ## Exemples d'utilisation
 
 Éditer un fichier peut se faire via vim (`vi`) ou PHPStorm (`phpstorm`) :
@@ -40,4 +56,12 @@ Exécuter les tests de `Robot.php` :
 Exécuter tous les tests :
 
     $ gotest
-    $ atoum --test-all
+    $ atoum
+
+Changer d'étape (1 à 2 par exemple) :
+
+    $ git checkout -f step2
+
+## Présentation
+
+La présentation se trouve dans le fichier `Slides.pdf`.
